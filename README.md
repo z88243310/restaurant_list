@@ -4,6 +4,16 @@
 
 網站建構使用 Node.js + Express + Express-handlebars + Boostrap + Font-awesome
 
+## 頁面呈現
+<p float="left">
+<img src="https://github.com/z88243310/restaurant_list/blob/ba571204ee15e69fe25f0a85ba1c1cabc3c9921d/public/img/homePage.png" width="49%">
+<img src="https://github.com/z88243310/restaurant_list/blob/ba571204ee15e69fe25f0a85ba1c1cabc3c9921d/public/img/restaurantInfo.png" width="49%">
+</p>
+
+## 功能描述
+1. 關鍵字搜尋
+2. 餐廳資料連結 Google Map
+
 ## 環境建置需求
 1. [Node.js 14.16.0](https://nodejs.org/en/)
 2. terminal | cmd | gitBash
@@ -25,8 +35,9 @@ cd restaurant_list
 ```
 npm install
 ```
-5. 最後即可執行專案
+5. 執行專案 ( terminal 顯示 The server is listening on http://localhost:3000 )
 ```
 npm start
 ```
-## 功能描述
+6. 開啟瀏覽器輸入網址 http://localhost:3000
+
