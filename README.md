@@ -11,6 +11,7 @@
 </p>
 
 ## 功能描述
+* 餐廳縮圖陳列
 * 關鍵字搜尋
 * 餐廳資料連結 Google Map
 
@@ -19,11 +20,11 @@
 * Terminal | CMD | [Git Bash](https://gitforwindows.org/)
 
 ## 安裝與執行步驟
-* 打開終端機 cd 到指定路徑 ( 以 windows桌面 為例 )
+1. 打開終端機 cd 到指定路徑 ( 以 windows桌面 為例 )
 ```
 cd C:\Users\'使用者名稱'\Desktop
 ```
-* 下載 restaurant_list 專案到本地電腦上
+2. 下載 restaurant_list 專案到本地電腦上
 ```
 git clone https://github.com/z88243310/restaurant_list.git
 ```
@@ -45,5 +46,5 @@ npm start
 * Node.js 14.16.0
 * Express 4.17.1
 * Express-handlebars 5.3.4
-* Boostrap 4.2.1 ( 含 popper 2.9.1 + jquery 3.3.1 )
+* Boostrap 4.2.1 ( 搭配 popper 2.9.1 + jquery 3.3.1 )
 * Font-awesome 5.13.0
