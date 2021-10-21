@@ -6,8 +6,8 @@
 
 ## 頁面呈現
 <p float="left">
-<img src="https://github.com/z88243310/restaurant_list/blob/ba571204ee15e69fe25f0a85ba1c1cabc3c9921d/public/img/homePage.png" width="49%">
-<img src="https://github.com/z88243310/restaurant_list/blob/ba571204ee15e69fe25f0a85ba1c1cabc3c9921d/public/img/restaurantInfo.png" width="49%">
+<img src="https://github.com/z88243310/restaurant_list/blob/ba571204ee15e69fe25f0a85ba1c1cabc3c9921d/public/img/homePage.png" width="40%">
+<img src="https://github.com/z88243310/restaurant_list/blob/ba571204ee15e69fe25f0a85ba1c1cabc3c9921d/public/img/restaurantInfo.png" width="40%">
 </p>
 
 ## 功能描述
