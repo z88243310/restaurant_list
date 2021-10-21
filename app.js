@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
   res.render('index', { restaurants: restaurantList.results })
 })
 app.get('/restaurants/:id', (req, res) => {
-  const restaurantOne = restaurantList.results.find((restaurant) => String(restaurant.id) === req.params.id)
+  const restaurant = restaurantList.results.find((restaurant) => String(restaurant.id) === req.params.id)
   // { restaurant : restaurant } object literal extension
   res.render('show', { restaurant })
 })
