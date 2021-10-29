@@ -13,4 +13,5 @@ db.once('open', () => {
   restaurantSeed.results.forEach((seed) => {
     Restaurant.create(seed).catch(() => console.log(`${seed.name} is error!`))
   })
+  console.log('seed finish!')
 })
