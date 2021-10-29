@@ -72,9 +72,10 @@ app.post('/restaurants/:id/edit', (req, res) => {
 // queryString : search
 app.get('/search', (req, res) => {
   const keyword = req.query.keyword.toLowerCase().trim()
-  const restaurants = restaurantList.results.filter(
-    (restaurant) => restaurant.name.toLowerCase().includes(keyword) || restaurant.category.toLowerCase().includes(keyword)
-  )
+  return Restaurant.find({ $or: [{ name: new RegExp(keyword, 'i') }, { category: new RegExp(keyword, 'i') }] })
+    .lean()
+    .then((restaurants) => console.log(restaurants))
+    .catch((error) => console.log(error))
   // { restaurants : restaurants , keyword : keyword } object literal extension
   res.render('index', { restaurants, keyword })
 })
