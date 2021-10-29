@@ -74,10 +74,9 @@ app.get('/search', (req, res) => {
   const keyword = req.query.keyword.toLowerCase().trim()
   return Restaurant.find({ $or: [{ name: new RegExp(keyword, 'i') }, { category: new RegExp(keyword, 'i') }] })
     .lean()
-    .then((restaurants) => console.log(restaurants))
+    .then((restaurants) => res.render('index', { restaurants, keyword }))
     .catch((error) => console.log(error))
   // { restaurants : restaurants , keyword : keyword } object literal extension
-  res.render('index', { restaurants, keyword })
 })
 
 // start and listen on the Express server
