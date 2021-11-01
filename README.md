@@ -19,6 +19,7 @@
 
 - [Node.js](https://nodejs.org/en/)
 - Terminal | CMD | [Git Bash](https://gitforwindows.org/)
+- MongoDB 管理工具 ( [Robo 3T](https://robomongo.org/) )
 
 ## 安裝與執行步驟
 
@@ -46,13 +47,19 @@ cd restaurant_list
 npm install
 ```
 
-5.執行專案 ( 伺服器啟動後會顯示 `The server is listening on http://localhost:3000` )
+5.製造種子資料 ( `須先確定 MongoDB 已啟動` )
 
 ```text
-npm start
+npm run seed
 ```
 
-6.開啟瀏覽器輸入網址 <http://localhost:3000>
+6.執行專案 ( 伺服器啟動後會顯示 `The server is listening on http://localhost:3000` )
+
+```text
+npm run start
+```
+
+7.開啟瀏覽器輸入網址 <http://localhost:3000>
 
 ## 開發工具版本
 
@@ -61,3 +68,5 @@ npm start
 - Express-handlebars 5.3.4
 - Boostrap 4.2.1 ( 搭配 popper 2.9.1 + jquery 3.3.1 )
 - Font-awesome 5.13.0
+- Mongoose 6.0.12
+- Robo 3T 1.4
