@@ -33,6 +33,17 @@ app.get('/', (req, res) => {
     .catch((error) => console.log(error))
 })
 
+app.get('/restaurants/create', (req, res) => {
+  res.render('create')
+})
+
+app.post('/restaurants/create', (req, res) => {
+  console.log(req.body)
+  return Restaurant.create(req.body) // 存入資料庫
+    .then(() => res.redirect('/')) // 回到首頁
+    .catch((error) => console.log(error))
+})
+
 app.get('/restaurants/:id', (req, res) => {
   const id = req.params.id
   return Restaurant.findById(id)

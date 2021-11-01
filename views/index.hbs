@@ -23,6 +23,10 @@
       </form>
     </div>
   </div>
+  <a class="float-right mr-5" href="/restaurants/create">
+    <span>新增餐廳</span>
+    <i class="fas fa-plus"></i>
+  </a>
 </div>
 
 {{#if restaurants.length}}
@@ -31,7 +35,7 @@
   <div class='container mt-5 px-md-5'>
     <div class='row'>
       {{#each restaurants}}
-        <form class='col-12 col-sm-6 col-md-4 mb-4' action='/restaurants/{{this._id}}/delete' method='POST'>
+        <form id="form-delete"class='col-12 col-sm-6 col-md-4 mb-4' action='/restaurants/{{this._id}}/delete' method='POST'>
           <a href='/restaurants/{{this._id}}' class='text-secondary'>
             <div class='card mb-3'>
               <img class='card-img-top' src='{{this.image}}' alt='{{this.name}}' />
@@ -51,7 +55,7 @@
           <div class='text-right'>
             <a href='/restaurants/{{this._id}}/edit' class='mr-2'>Edit</a>
             <a href='/restaurants/{{this._id}}/detail' class='mr-2'>Detail</a>
-            <button type='submit' class='btn btn-secondary'>Delete</button>
+            <button type='submit' class='btn btn-danger'><i class="far fa-trash-alt"></i></button>
           </div>
         </form>
       {{/each}}

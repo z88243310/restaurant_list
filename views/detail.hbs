@@ -1,6 +1,7 @@
 <link rel='stylesheet' href='/stylesheets/show_style.css' />
 
 <div class='container'>
+  <h1 class="mb-1 restaurant-show-title">餐廳詳細資訊</h1>
   <div class='row mt-5 mx-auto'>
     <div class='col-12 col-md-10 mx-auto'>
       <p class='mb-2'>
@@ -66,9 +67,9 @@
         </span><a class='w-100' href='{{restaurant.image}}'>{{restaurant.image}}</a>
         <img class='w-100' src='{{restaurant.image}}' alt='restaurant-image' />
       </p>
-      <div class='text-center mb-5' action='/'>
-        <a class='mr-5 btn btn-primary' style='font-size:1.2em;' href='/'>Back</a>
-        <a class='mr-5 btn btn-primary' style='font-size:1.2em;' href='/restaurants/{{restaurant._id}}/edit'>Edit</a>
+      <div class="w-25 mx-auto mb-5 d-flex justify-content-around">
+        <a class='btn btn-secondary' style='font-size:1.2em;' href='/'>< Back</a>
+        <a class='btn btn-primary' style='font-size:1.2em;' href='/restaurants/{{restaurant._id}}/edit'>Edit</a>
       </div>
     </div>
   </div>

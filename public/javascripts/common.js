@@ -1,8 +1,8 @@
-const btnDelete = document.querySelectorAll('.btn-secondary')
+const formDelete = document.querySelectorAll('#form-delete')
 
-btnDelete.forEach((btn) => {
-  btn.addEventListener('click', function onDeleteButtonClicked(event) {
+formDelete.forEach((form) => {
+  form.addEventListener('submit', function onFormSubmitted(event) {
     event.preventDefault()
-    if (confirm('確定刪除嗎？')) event.target.form.submit()
+    if (confirm('確定刪除嗎？')) event.target.submit()
   })
 })
