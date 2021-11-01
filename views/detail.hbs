@@ -2,28 +2,27 @@
 
 <div class="container">
   <div class="row mt-5 mx-auto">
-    <form class="col-12 col-md-10 mx-auto" 
-    action="/restaurants/{{restaurant._id}}/edit" method="POST">
+    <div class="col-12 col-md-10 mx-auto">
       <p class="mb-2">
         <span class="text-secondary">
           <i class="fas fa-utensils pr-2"></i>
           中文名稱：
         </span>
-        <input class="w-100 " type="text" name="name" value="{{restaurant.name}}">
+        <div class="w-100 "> {{restaurant.name}}</div>
       </p>
       <p class="mb-2">
         <span class="text-secondary">
           <i class="fas fa-utensils pr-2"></i>
           英文名稱：
         </span>
-        <input class="w-100"  type="text" name="name_en" value="{{restaurant.name_en}}">
+        <div class="w-100 "> {{restaurant.name_en}}</div>
       </p>
       <p class="mb-2">
         <span class="text-secondary">
           <i class="fas fa-utensils pr-2"></i>
           類別：
         </span>
-        <input class="w-100"   type="text" name="category" value="{{restaurant.category}}">
+        <div class="w-100">{{restaurant.category}}</div>
       </p>
 
       <p class="mb-2">
@@ -31,7 +30,7 @@
           <i class="fas fa-map-marker-alt pr-2"></i>
           地址：
         </span>
-        <input class="w-100"  type="text" name="location" value="{{restaurant.location}}">
+        <div class="w-100">{{restaurant.location}}</div>
       </p>
 
       <p class="mb-2">
@@ -39,18 +38,17 @@
           <i class="fas fa-location-arrow pr-2 fa-xs"></i>
           地圖：
         </span>
-        
-        <input class="w-100"  type="text" name="google_map"
-          value="{{restaurant.google_map}}">
-
+        <div>
+          <a class="w-100" href="{{restaurant.google_map}}">{{restaurant.google_map}}</a>
+        </div>
       </p>
-      
+
       <p class="mb-2">
         <span class="text-secondary">
           <i class="fas fa-mobile-alt pr-2"></i>
           電話：
         </span>
-        <input class="w-100"  type="text" name="phone" value="{{restaurant.phone}}">
+        <div class="w-100">{{restaurant.phone}}</div>
       </p>
 
       <p class="mb-2">
@@ -58,21 +56,20 @@
           <i class="fas fa-signature"></i>
           描述：
         </span>
-        <textarea class="w-100" style="height:200px;" name="description" >{{restaurant.description}}</textarea>
+        <div class="w-100">{{restaurant.description}}</div>
       </p>
 
       <p class="mb-5">
         <span class="text-secondary">
           <i class="fas fa-image"></i>
           圖片：
-        </span>
-        <input class="w-100" type="text" name="image"
-        value="{{restaurant.image}}">
+        </span><a class="w-100" href="{{restaurant.image}}">{{restaurant.image}}</a>
+        <img class="w-100" src="{{restaurant.image}}" alt="restaurant-image">
       </p>
       <div class="text-center mb-5" action="/">
         <a class="mr-5 btn btn-primary" style="font-size:1.2em;" href="/">Back</a>
-        <button type="submit" class="mr-5 btn btn-primary" style="font-size:1.2em;" href="/">修改</button>
+        <a class="mr-5 btn btn-primary" style="font-size:1.2em;" href="/restaurants/{{restaurant._id}}/edit">Edit</a>
       </div>
-    </form>
+    </div>
   </div>
 </div>

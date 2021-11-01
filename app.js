@@ -65,7 +65,15 @@ app.post('/restaurants/:id/edit', (req, res) => {
       restaurant.description = req.body.description
       return restaurant.save()
     })
-    .then(() => res.redirect(`/restaurants/${id}`))
+    .then(() => res.redirect(`/restaurants/${id}/detail`))
+    .catch((error) => console.log(error))
+})
+
+app.get('/restaurants/:id/detail', (req, res) => {
+  const id = req.params.id
+  return Restaurant.findById(id)
+    .lean()
+    .then((restaurant) => res.render('detail', { restaurant }))
     .catch((error) => console.log(error))
 })
 
