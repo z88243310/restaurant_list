@@ -1,74 +1,74 @@
-<link rel="stylesheet" href="/stylesheets/show_style.css">
+<link rel='stylesheet' href='/stylesheets/show_style.css' />
 
-<div class="container">
-  <div class="row mt-5 mx-auto">
-    <div class="col-12 col-md-10 mx-auto">
-      <p class="mb-2">
-        <span class="text-secondary">
-          <i class="fas fa-utensils pr-2"></i>
+<div class='container'>
+  <div class='row mt-5 mx-auto'>
+    <div class='col-12 col-md-10 mx-auto'>
+      <p class='mb-2'>
+        <span class='text-secondary'>
+          <i class='fas fa-utensils pr-2'></i>
           中文名稱：
         </span>
-        <div class="w-100 "> {{restaurant.name}}</div>
+        <div class='w-100'> {{restaurant.name}}</div>
       </p>
-      <p class="mb-2">
-        <span class="text-secondary">
-          <i class="fas fa-utensils pr-2"></i>
+      <p class='mb-2'>
+        <span class='text-secondary'>
+          <i class='fas fa-utensils pr-2'></i>
           英文名稱：
         </span>
-        <div class="w-100 "> {{restaurant.name_en}}</div>
+        <div class='w-100'> {{restaurant.name_en}}</div>
       </p>
-      <p class="mb-2">
-        <span class="text-secondary">
-          <i class="fas fa-utensils pr-2"></i>
+      <p class='mb-2'>
+        <span class='text-secondary'>
+          <i class='fas fa-utensils pr-2'></i>
           類別：
         </span>
-        <div class="w-100">{{restaurant.category}}</div>
+        <div class='w-100'>{{restaurant.category}}</div>
       </p>
 
-      <p class="mb-2">
-        <span class="text-secondary">
-          <i class="fas fa-map-marker-alt pr-2"></i>
+      <p class='mb-2'>
+        <span class='text-secondary'>
+          <i class='fas fa-map-marker-alt pr-2'></i>
           地址：
         </span>
-        <div class="w-100">{{restaurant.location}}</div>
+        <div class='w-100'>{{restaurant.location}}</div>
       </p>
 
-      <p class="mb-2">
-        <span class="text-secondary">
-          <i class="fas fa-location-arrow pr-2 fa-xs"></i>
+      <p class='mb-2'>
+        <span class='text-secondary'>
+          <i class='fas fa-location-arrow pr-2 fa-xs'></i>
           地圖：
         </span>
         <div>
-          <a class="w-100" href="{{restaurant.google_map}}">{{restaurant.google_map}}</a>
+          <a class='w-100' href='{{restaurant.google_map}}'>{{restaurant.google_map}}</a>
         </div>
       </p>
 
-      <p class="mb-2">
-        <span class="text-secondary">
-          <i class="fas fa-mobile-alt pr-2"></i>
+      <p class='mb-2'>
+        <span class='text-secondary'>
+          <i class='fas fa-mobile-alt pr-2'></i>
           電話：
         </span>
-        <div class="w-100">{{restaurant.phone}}</div>
+        <div class='w-100'>{{restaurant.phone}}</div>
       </p>
 
-      <p class="mb-2">
-        <span class="text-secondary">
-          <i class="fas fa-signature"></i>
+      <p class='mb-2'>
+        <span class='text-secondary'>
+          <i class='fas fa-signature'></i>
           描述：
         </span>
-        <div class="w-100">{{restaurant.description}}</div>
+        <div class='w-100'>{{restaurant.description}}</div>
       </p>
 
-      <p class="mb-5">
-        <span class="text-secondary">
-          <i class="fas fa-image"></i>
+      <p class='mb-5'>
+        <span class='text-secondary'>
+          <i class='fas fa-image'></i>
           圖片：
-        </span><a class="w-100" href="{{restaurant.image}}">{{restaurant.image}}</a>
-        <img class="w-100" src="{{restaurant.image}}" alt="restaurant-image">
+        </span><a class='w-100' href='{{restaurant.image}}'>{{restaurant.image}}</a>
+        <img class='w-100' src='{{restaurant.image}}' alt='restaurant-image' />
       </p>
-      <div class="text-center mb-5" action="/">
-        <a class="mr-5 btn btn-primary" style="font-size:1.2em;" href="/">Back</a>
-        <a class="mr-5 btn btn-primary" style="font-size:1.2em;" href="/restaurants/{{restaurant._id}}/edit">Edit</a>
+      <div class='text-center mb-5' action='/'>
+        <a class='mr-5 btn btn-primary' style='font-size:1.2em;' href='/'>Back</a>
+        <a class='mr-5 btn btn-primary' style='font-size:1.2em;' href='/restaurants/{{restaurant._id}}/edit'>Edit</a>
       </div>
     </div>
   </div>

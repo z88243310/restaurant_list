@@ -1,17 +1,23 @@
-<link rel="stylesheet" href="/stylesheets/index_style.css">
+<link rel='stylesheet' href='/stylesheets/index_style.css' />
 
 <!-- search bar -->
-<div class="container search-bar">
-  <div class="search-bar-outer">
-    <div class="search-bar-inner">
-      <form action="/search">
-        <h4 class="mb-2">尋找餐廳：</h4>
-        <div class="input-group">
-          <input type="text" name="keyword" class="form-control" placeholder="輸入餐廳、分類"
-            aria-label="Restaurant Name..." value="{{keyword}}" aria-describedby="search-button">
-          <div class="input-group-append">
-            <button class="btn btn-major" type="submit" id="search-button"><i
-                class="fas fa-search"></i></button>
+<div class='container search-bar'>
+  <div class='search-bar-outer'>
+    <div class='search-bar-inner'>
+      <form action='/search'>
+        <h4 class='mb-2'>尋找餐廳：</h4>
+        <div class='input-group'>
+          <input
+            type='text'
+            name='keyword'
+            class='form-control'
+            placeholder='輸入餐廳、分類'
+            aria-label='Restaurant Name...'
+            value='{{keyword}}'
+            aria-describedby='search-button'
+          />
+          <div class='input-group-append'>
+            <button class='btn btn-major' type='submit' id='search-button'><i class='fas fa-search'></i></button>
           </div>
         </div>
       </form>
@@ -19,44 +25,44 @@
   </div>
 </div>
 
-
 {{#if restaurants.length}}
 
-<!-- restaurant list -->
-<div class="container mt-5 px-md-5">
-  <div class="row">
-    {{#each restaurants}}
-    <div class="col-12 col-sm-6 col-md-4 mb-4">
-        <a href="/restaurants/{{this._id}}" class="text-secondary">
-          <div class="card mb-3">
-            <img class="card-img-top" src="{{this.image}}" alt="{{this.name}}">
-            <div class="card-body p-3">
-              <h6 class="card-title mb-1">{{this.name}}</h6>
-              <div class="restaurant-category mb-1">
-                <i class="fas fa-utensils pr-2"></i> {{this.category}}
+  <!-- restaurant list -->
+  <div class='container mt-5 px-md-5'>
+    <div class='row'>
+      {{#each restaurants}}
+        <form class='col-12 col-sm-6 col-md-4 mb-4' action='/restaurants/{{this._id}}/delete' method='POST'>
+          <a href='/restaurants/{{this._id}}' class='text-secondary'>
+            <div class='card mb-3'>
+              <img class='card-img-top' src='{{this.image}}' alt='{{this.name}}' />
+              <div class='card-body p-3'>
+                <h6 class='card-title mb-1'>{{this.name}}</h6>
+                <div class='restaurant-category mb-1'>
+                  <i class='fas fa-utensils pr-2'></i>
+                  {{this.category}}
+                </div>
+                <span class='badge badge-pill badge-danger font-weight-normal'>
+                  {{this.rating}}
+                  <i class='fas fa-star fa-xs'></i>
+                </span>
               </div>
-              <span class="badge badge-pill badge-danger font-weight-normal">
-                {{this.rating}}
-                <i class="fas fa-star fa-xs"></i>
-              </span>
             </div>
+          </a>
+          <div class='text-right'>
+            <a href='/restaurants/{{this._id}}/edit' class='mr-2'>Edit</a>
+            <a href='/restaurants/{{this._id}}/detail' class='mr-2'>Detail</a>
+            <button type='submit' class='btn btn-secondary'>Delete</button>
           </div>
-        </a>
-        <div class="text-right">
-          <a href="/restaurants/{{this._id}}/edit" class="mr-2">Edit</a>
-          <a href="/restaurants/{{this._id}}/detail" class="mr-2">Detail</a>
-        </div>
+        </form>
+      {{/each}}
     </div>
-    {{/each}}
   </div>
-</div>
 
 {{else}}
 
-<!-- none data message -->
-<div class="container mt-5 text-center">
-  <p>找不到符合搜尋字詞「<span class="text-danger">{{keyword}}</span>」的餐廳。請嘗試輸入其它關鍵字。</p>
-</div>
+  <!-- none data message -->
+  <div class='container mt-5 text-center'>
+    <p>找不到符合搜尋字詞「<span class='text-danger'>{{keyword}}</span>」的餐廳。請嘗試輸入其它關鍵字。</p>
+  </div>
 
 {{/if}}
-
