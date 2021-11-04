@@ -3,6 +3,7 @@ const express = require('express')
 const exphbs = require('express-handlebars')
 const mongoose = require('mongoose')
 const Restaurant = require('./models/restaurant') // 載入 restaurant model
+const methodOverride = require('method-override')
 
 const app = express()
 const port = 3000
@@ -25,6 +26,9 @@ app.use(express.static('public'))
 // 用 app.use 規定每一筆請求都需要透過 body-parser 進行前置處理
 app.use(express.urlencoded({ extended: true }))
 
+// 使用 method-override 將 request 轉為 REETful 風格請求
+app.use(methodOverride('_method'))
+
 // routes setting
 app.get('/', (req, res) => {
   Restaurant.find()
@@ -38,7 +42,6 @@ app.get('/restaurants/create', (req, res) => {
 })
 
 app.post('/restaurants/create', (req, res) => {
-  console.log(req.body)
   return Restaurant.create(req.body) // 存入資料庫
     .then(() => res.redirect('/')) // 回到首頁
     .catch((error) => console.log(error))
@@ -60,7 +63,7 @@ app.get('/restaurants/:id/edit', (req, res) => {
     .catch((error) => console.log(error))
 })
 
-app.post('/restaurants/:id/edit', (req, res) => {
+app.put('/restaurants/:id', (req, res) => {
   const id = req.params.id
 
   return Restaurant.findById(id)
@@ -80,7 +83,7 @@ app.get('/restaurants/:id/detail', (req, res) => {
     .catch((error) => console.log(error))
 })
 
-app.post('/restaurants/:id/delete', (req, res) => {
+app.delete('/restaurants/:id', (req, res) => {
   const id = req.params.id
   return Restaurant.findById(id)
     .then((restaurant) => restaurant.remove())
