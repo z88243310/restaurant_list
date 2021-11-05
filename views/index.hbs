@@ -16,17 +16,28 @@
             value='{{keyword}}'
             aria-describedby='search-button'
           />
+
+          <input type='hidden' name='modeSelected' aria-label='sort mode' value={{#if modeSelected}} "{{modeSelected}}" {{else}} "A->Z" {{/if}} aria-describedby='search-button' />
+
           <div class='input-group-append'>
-            <button class='btn btn-major' type='submit' id='search-button'><i class='fas fa-search'></i></button>
+            <button class='btn btn-major mr-5' type='submit' id='search-button'><i class='fas fa-search'></i></button>
+          </div>
+          <div class="dropdown mx-auto">
+            <button type="button" class="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset"
+              data-toggle="dropdown" aria-expanded="false" data-offset="10,20">
+              {{#if modeSelected}} {{modeSelected}} {{else}} A->Z {{/if}}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+              <a class="dropdown-item" href="/search?keyword={{keyword}}&modeSelected=A->Z">A->Z</a>
+              <a class="dropdown-item" href="/search?keyword={{keyword}}&modeSelected=Z->A">Z->A</a>
+              <a class="dropdown-item" href="/search?keyword={{keyword}}&modeSelected=類別">類別</a>
+              <a class="dropdown-item" href="/search?keyword={{keyword}}&modeSelected=地區">地區</a>
+            </div>
           </div>
         </div>
       </form>
     </div>
   </div>
-  <a class="float-right mr-5" href="/restaurants/create">
-    <span>新增餐廳</span>
-    <i class="fas fa-plus"></i>
-  </a>
 </div>
 
 {{#if restaurants.length}}

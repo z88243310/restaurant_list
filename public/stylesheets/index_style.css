@@ -22,7 +22,7 @@ header {
 
 .search-bar .search-bar-outer {
   margin: 0 auto;
-  max-width: 680px;
+  max-width: 880px;
   background-color: #fce2cf;
   border-radius: 8px;
   padding: 20px 30px;
@@ -35,9 +35,22 @@ header {
   color: #9b4b4b;
 }
 
+.form-control {
+  min-width: 150px;
+  max-width: 500px;
+}
+
 .form-control::placeholder {
   color: #aaaaaa;
   font-size: 0.8rem;
+}
+
+.form-select {
+  margin-left: 50px;
+  height: 40px;
+  width: 100%;
+  max-width: 200px;
+  min-width: 50px;
 }
 
 .btn-major {

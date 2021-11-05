@@ -1,0 +1,11 @@
+/* new style */
+.btn-create {
+  display: initial;
+  color: #4592af;
+  border: 1px solid #226089;
+  border-radius: 10px;
+  padding: 3px 12px;
+}
+.btn-create:hover {
+  color: #226089;
+}
