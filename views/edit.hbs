@@ -70,11 +70,13 @@
         <input class="w-100" type="text" name="image"
         value="{{restaurant.image}}">
       </p>
-      <div class="w-25 mx-auto mb-5 d-flex justify-content-around">
-        <a class='btn btn-secondary' style='font-size:1.2em;' href='/'>
+      <div class="w-100 mx-auto mb-5 d-flex justify-content-center">
+        <a class='btn btn-secondary mr-5' style='font-size:1.2em;' href='/'>
           < Back</a>
         <button type="submit" class="mr-5 btn btn-primary" style="font-size:1.2em;">Save</button>
-      </div>
+        <button type='button' id='btn-delete' class='btn btn-danger far fa-trash-alt'
+          data-id="{{restaurant._id}}"></button>
+      </div>    
     </form>
   </div>
 </div>

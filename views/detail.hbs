@@ -67,9 +67,10 @@
         </span><a class='w-100' href='{{restaurant.image}}'>{{restaurant.image}}</a>
         <img class='w-100' src='{{restaurant.image}}' alt='restaurant-image' />
       </p>
-      <div class="w-25 mx-auto mb-5 d-flex justify-content-around">
-        <a class='btn btn-secondary' style='font-size:1.2em;' href='/'>< Back</a>
-        <a class='btn btn-primary' style='font-size:1.2em;' href='/restaurants/{{restaurant._id}}/edit'>Edit</a>
+      <div class="w-100 mx-auto mb-5 d-flex justify-content-center">
+        <a class='btn btn-secondary mr-5' style='font-size:1.2em;' href='/'>< Back</a>
+        <a class='btn btn-primary mr-5' style='font-size:1.2em;' href='/restaurants/{{restaurant._id}}/edit'>Edit</a>
+        <button type='button' id='btn-delete' class='btn btn-danger far fa-trash-alt' data-id="{{restaurant._id}}"></button>
       </div>
     </div>
   </div>
