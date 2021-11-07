@@ -1,10 +1,19 @@
 const db = require('../../config/mongoose')
 const Restaurant = require('../restaurant') // 載入 todo model
-const restaurantSeed = require('./restaurant.json')
+const restaurantSeed = require('./restaurant.json').results
+
+// db.once('open', () => {
+//   restaurantSeed.results.forEach((seed) => {
+//     Restaurant.create(seed).catch(() => console.log(`${seed.name} is error!`))
+//   })
+//   console.log('seed finish!')
+// })
 
 db.once('open', () => {
-  restaurantSeed.results.forEach((seed) => {
-    Restaurant.create(seed).catch(() => console.log(`${seed.name} is error!`))
-  })
-  console.log('seed finish!')
+  Restaurant.insertMany(restaurantSeed)
+    .catch(() => console.log(`${seed.name} is error!`))
+    .finally(() => {
+      console.log('data is created!')
+      process.exit()
+    })
 })
