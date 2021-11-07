@@ -4,19 +4,11 @@ const router = express.Router()
 // 引用 Restaurant model
 const Restaurant = require('../../models/restaurant')
 
-// HomePage
+// HomePage with queryString and category
 router.get('/', (req, res) => {
-  Restaurant.find()
-    .lean()
-    .sort({ name: 'asc' })
-    .then((restaurants) => res.render('index', { restaurants }))
-    .catch((error) => console.log(error))
-})
-
-// queryString : search
-router.get('/search', (req, res) => {
-  const keyword = req.query.keyword.toLowerCase().trim()
-  const modeSelected = req.query.modeSelected
+  console.log(req.query.keyword)
+  const keyword = req.query.keyword ? req.query.keyword.toLowerCase().trim() : ''
+  const modeSelected = req.query.modeSelected || 'A->Z'
   let modeStatus = ''
   switch (modeSelected) {
     case 'A->Z':

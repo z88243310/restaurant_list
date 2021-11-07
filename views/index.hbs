@@ -4,7 +4,7 @@
 <div class='container search-bar'>
   <div class='search-bar-outer'>
     <div class='search-bar-inner'>
-      <form action='/search'>
+      <form action='/'>
         <h4 class='mb-2'>尋找餐廳：</h4>
         <div class='input-group'>
           <input
@@ -28,10 +28,10 @@
               {{#if modeSelected}} {{modeSelected}} {{else}} A->Z {{/if}}
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
-              <a class="dropdown-item" href="/search?keyword={{keyword}}&modeSelected=A->Z">A->Z</a>
-              <a class="dropdown-item" href="/search?keyword={{keyword}}&modeSelected=Z->A">Z->A</a>
-              <a class="dropdown-item" href="/search?keyword={{keyword}}&modeSelected=類別">類別</a>
-              <a class="dropdown-item" href="/search?keyword={{keyword}}&modeSelected=地區">地區</a>
+              <a class="dropdown-item" href="/?keyword={{keyword}}&modeSelected=A->Z">A->Z</a>
+              <a class="dropdown-item" href="/?keyword={{keyword}}&modeSelected=Z->A">Z->A</a>
+              <a class="dropdown-item" href="/?keyword={{keyword}}&modeSelected=類別">類別</a>
+              <a class="dropdown-item" href="/?keyword={{keyword}}&modeSelected=地區">地區</a>
             </div>
           </div>
         </div>
