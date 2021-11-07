@@ -3,6 +3,8 @@ const express = require('express')
 const router = express.Router()
 // 引用 Restaurant model
 const Restaurant = require('../../models/restaurant')
+// 引用 errorHandler model
+const errorHandler = require('../../models/errorHandler')
 
 // HomePage with queryString and category
 router.get('/', (req, res) => {
@@ -30,7 +32,7 @@ router.get('/', (req, res) => {
     .lean()
     .sort(modeStatus)
     .then((restaurants) => res.render('index', { restaurants, keyword, modeSelected }))
-    .catch((error) => console.log(error))
+    .catch((error) => errorHandler(error, res))
 })
 
 // 匯出路由模組
