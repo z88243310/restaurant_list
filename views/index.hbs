@@ -47,7 +47,7 @@
     <div class='row'>
       {{#each restaurants}}
         <form id="form-delete"class='col-12 col-sm-6 col-md-4 mb-4' action='/restaurants/{{this._id}}?_method=DELETE' method='POST'>
-          <a href='/restaurants/{{this._id}}' class='text-secondary'>
+          <a href='/restaurants/{{this._id}}/detail?simple=true' class='text-secondary'>
             <div class='card mb-3'>
               <img class='card-img-top' src='{{this.image}}' alt='{{this.name}}' />
               <div class='card-body p-3'>
@@ -65,7 +65,7 @@
           </a>
           <div class='text-right'>
             <a href='/restaurants/{{this._id}}/edit' class='mr-2'>Edit</a>
-            <a href='/restaurants/{{this._id}}/detail' class='mr-2'>Detail</a>
+            <a href='/restaurants/{{this._id}}/detail?simple=false' class='mr-2'>Detail</a>
             <button type='submit' class='btn btn-danger far fa-trash-alt'></button>
           </div>
         </form>

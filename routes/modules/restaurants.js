@@ -12,16 +12,7 @@ router.get('/create', (req, res) => {
 // Do : Create new restaurant
 router.post('/create', (req, res) => {
   return Restaurant.create(req.body) // 存入資料庫
-    .then((restaurant) => res.redirect(`/restaurants/${restaurant._id}/detail`)) // 回到首頁
-    .catch((error) => console.log(error))
-})
-
-// Page : restaurant simple information
-router.get('/:id', (req, res) => {
-  const id = req.params.id
-  return Restaurant.findById(id)
-    .lean()
-    .then((restaurant) => res.render('show', { restaurant }))
+    .then((restaurant) => res.redirect(`/restaurants/${restaurant._id}/detail`))
     .catch((error) => console.log(error))
 })
 
@@ -37,7 +28,6 @@ router.get('/:id/edit', (req, res) => {
 // Do : edit restaurant information
 router.put('/:id', (req, res) => {
   const id = req.params.id
-
   return Restaurant.findById(id)
     .then((restaurant) => {
       restaurant = Object.assign(restaurant, req.body)
@@ -47,12 +37,13 @@ router.put('/:id', (req, res) => {
     .catch((error) => console.log(error))
 })
 
-// Page : restaurant detail information
+// Page : restaurant detail or simple information
 router.get('/:id/detail', (req, res) => {
   const id = req.params.id
+  const mode = req.query.simple === 'true' ? 'show' : 'detail'
   return Restaurant.findById(id)
     .lean()
-    .then((restaurant) => res.render('detail', { restaurant }))
+    .then((restaurant) => res.render(mode, { restaurant }))
     .catch((error) => console.log(error))
 })
 

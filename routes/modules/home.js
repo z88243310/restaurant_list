@@ -6,7 +6,6 @@ const Restaurant = require('../../models/restaurant')
 
 // HomePage with queryString and category
 router.get('/', (req, res) => {
-  console.log(req.query.keyword)
   const keyword = req.query.keyword ? req.query.keyword.toLowerCase().trim() : ''
   const modeSelected = req.query.modeSelected || 'A->Z'
   let modeStatus = ''
