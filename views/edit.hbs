@@ -1,91 +1,86 @@
 <link rel="stylesheet" href="/stylesheets/show_style.css">
-
-<div class="container">
-  <h1 class="mb-1 restaurant-show-title">編輯餐廳資訊</h1>
-  <div class="row mt-5 mx-auto">
-    <form class="col-12 col-md-10 mx-auto"
-    action="/restaurants/{{restaurant._id}}?_method=PUT" method="POST">
-      <p class="mb-2">
-        <span class="text-secondary">
-          <i class="fas fa-utensils pr-2"></i>
-          中文名稱：
-        </span>
-        <input class="w-100" type="text" name="name" value="{{restaurant.name}}" placeholder="Enter the chinese name" required>
-      </p>
-      <p class="mb-2">
-        <span class="text-secondary">
-          <i class="fas fa-utensils pr-2"></i>
-          英文名稱：
-        </span>
-        <input class="w-100" type="text" name="name_en" value="{{restaurant.name_en}}" placeholder="Enter the english name" required>
-      </p>
-      <p class="mb-2">
-        <span class="text-secondary">
-          <i class="fas fa-utensils pr-2"></i>
-          類別：
-        </span>
-        <input list="categories" class="w-100" placeholder="Select the category or enter the category"
-          name="category" value="{{restaurant.category}}" required>
-        <datalist id="categories">
-          <option>中東料理</option>
-          <option>咖啡</option>
-          <option>日本料理</option>
-          <option>美式</option>
-          <option>義式餐廳</option>
-          <option>酒吧</option>
-        </datalist>
-      </p>
-
-      <p class="mb-2">
-        <span class="text-secondary">
-          <i class="fas fa-map-marker-alt pr-2"></i>
-          地址：
-        </span>
-        <input class="w-100" type="text" name="location" value="{{restaurant.location}}" placeholder="Enter the address" required>
-      </p>
-
-      <p class="mb-2">
-        <span class="text-secondary">
-          <i class="fas fa-location-arrow pr-2 fa-xs"></i>
-          地圖：
-        </span>
-        
-        <input class="w-100" type="text" name="google_map"
-          value="{{restaurant.google_map}}" placeholder="Enter the url from google map" required>
-
-      </p>
-      
-      <p class="mb-2">
-        <span class="text-secondary">
-          <i class="fas fa-mobile-alt pr-2"></i>
-          電話：
-        </span>
-        <input class="w-100" type="text" name="phone" value="{{restaurant.phone}}" placeholder="Enter the phone number or tel number" required>
-      </p>
-
-      <p class="mb-2">
-        <span class="text-secondary">
-          <i class="fas fa-signature"></i>
-          描述：
-        </span>
-        <textarea class="w-100" style="height:200px;" name="description" placeholder="Describe this restaurant" required>{{restaurant.description}}</textarea>
-      </p>
-
-      <p class="mb-5">
-        <span class="text-secondary">
-          <i class="fas fa-image"></i>
-          圖片：
-        </span>
-        <input class="w-100" type="text" name="image"
-        value="{{restaurant.image}}" placeholder="Enter the url with image" required>
-      </p>
-      <div class="w-100 mx-auto mb-5 d-flex justify-content-center">
-        <a class='btn btn-secondary mr-5' style='font-size:1.2em;' href='/'>
-          < Back</a>
-        <button type="submit" class="mr-5 btn btn-primary" style="font-size:1.2em;">Save</button>
-        <button type='button' id='btn-delete' class='btn btn-danger far fa-trash-alt'
-          data-id="{{restaurant._id}}"></button>
-      </div>    
-    </form>
-  </div>
+<h1 class="mb-1 restaurant-show-title">編輯餐廳資訊</h1>
+<div class="row mt-5 mx-auto">
+  <form class="col-12 col-md-10 mx-auto" action="/restaurants/{{restaurant._id}}?_method=PUT"
+    method="POST">
+    <p class="mb-2">
+      <span class="text-secondary">
+        <i class="fas fa-utensils pr-2"></i>
+        中文名稱：
+      </span>
+      <input class="w-100" type="text" name="name" value="{{restaurant.name}}"
+        placeholder="Enter the chinese name" required>
+    </p>
+    <p class="mb-2">
+      <span class="text-secondary">
+        <i class="fas fa-utensils pr-2"></i>
+        英文名稱：
+      </span>
+      <input class="w-100" type="text" name="name_en" value="{{restaurant.name_en}}"
+        placeholder="Enter the english name" required>
+    </p>
+    <p class="mb-2">
+      <span class="text-secondary">
+        <i class="fas fa-utensils pr-2"></i>
+        類別：
+      </span>
+      <input list="categories" class="w-100" placeholder="Select the category or enter the category"
+        name="category" value="{{restaurant.category}}" required>
+      <datalist id="categories">
+        <option>中東料理</option>
+        <option>咖啡</option>
+        <option>日本料理</option>
+        <option>美式</option>
+        <option>義式餐廳</option>
+        <option>酒吧</option>
+      </datalist>
+    </p>
+    <p class="mb-2">
+      <span class="text-secondary">
+        <i class="fas fa-map-marker-alt pr-2"></i>
+        地址：
+      </span>
+      <input class="w-100" type="text" name="location" value="{{restaurant.location}}"
+        placeholder="Enter the address" required>
+    </p>
+    <p class="mb-2">
+      <span class="text-secondary">
+        <i class="fas fa-location-arrow pr-2 fa-xs"></i>
+        地圖：
+      </span>
+      <input class="w-100" type="text" name="google_map" value="{{restaurant.google_map}}"
+        placeholder="Enter the url from google map" required>
+    </p>
+    <p class="mb-2">
+      <span class="text-secondary">
+        <i class="fas fa-mobile-alt pr-2"></i>
+        電話：
+      </span>
+      <input class="w-100" type="text" name="phone" value="{{restaurant.phone}}"
+        placeholder="Enter the phone number or tel number" required>
+    </p>
+    <p class="mb-2">
+      <span class="text-secondary">
+        <i class="fas fa-signature"></i>
+        描述：
+      </span>
+      <textarea class="w-100" style="height:200px;" name="description"
+        placeholder="Describe this restaurant" required>{{restaurant.description}}</textarea>
+    </p>
+    <p class="mb-5">
+      <span class="text-secondary">
+        <i class="fas fa-image"></i>
+        圖片：
+      </span>
+      <input class="w-100" type="text" name="image" value="{{restaurant.image}}"
+        placeholder="Enter the url with image" required>
+    </p>
+    <div class="w-100 mx-auto mb-5 d-flex justify-content-center">
+      <a class='btn btn-secondary mr-5' style='font-size:1.2em;' href='/'>
+        < Back</a>
+          <button type="submit" class="mr-5 btn btn-primary" style="font-size:1.2em;">Save</button>
+          <button type='button' id='btn-delete' class='btn btn-danger far fa-trash-alt'
+            data-id="{{restaurant._id}}"></button>
+    </div>
+  </form>
 </div>

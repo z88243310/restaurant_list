@@ -1,26 +1,19 @@
 <link rel='stylesheet' href='/stylesheets/index_style.css' />
-
 <!-- search bar -->
-<div class='container search-bar'>
+<div class='search-bar'>
   <div class='search-bar-outer'>
     <div class='search-bar-inner'>
       <form action='/'>
         <h4 class='mb-2'>尋找餐廳：</h4>
         <div class='input-group'>
-          <input
-            type='text'
-            name='keyword'
-            class='form-control'
-            placeholder='輸入餐廳、分類'
-            aria-label='Restaurant Name...'
-            value='{{keyword}}'
-            aria-describedby='search-button'
-          />
-
-          <input type='hidden' name='modeSelected' aria-label='sort mode' value={{#if modeSelected}} "{{modeSelected}}" {{else}} "A->Z" {{/if}} aria-describedby='search-button' />
-
+          <input type='text' name='keyword' class='form-control' placeholder='輸入餐廳、分類'
+            aria-label='Restaurant Name...' value='{{keyword}}' aria-describedby='search-button' />
+          <input type='hidden' name='modeSelected' aria-label='sort mode' value={{#if
+            modeSelected}} "{{modeSelected}}" {{else}} "A->Z" {{/if}}
+            aria-describedby='search-button' />
           <div class='input-group-append'>
-            <button class='btn btn-major mr-5' type='submit' id='search-button'><i class='fas fa-search'></i></button>
+            <button class='btn btn-major mr-5' type='submit' id='search-button'><i
+                class='fas fa-search'></i></button>
           </div>
           <div class="dropdown mx-auto">
             <button type="button" class="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset"
@@ -39,14 +32,13 @@
     </div>
   </div>
 </div>
-
 {{#if restaurants.length}}
-
   <!-- restaurant list -->
   <div class='container mt-5 px-md-5'>
     <div class='row'>
       {{#each restaurants}}
-        <form id="form-delete"class='col-12 col-sm-6 col-md-4 mb-4' action='/restaurants/{{this._id}}?_method=DELETE' method='POST'>
+        <form id="form-delete" class='col-12 col-sm-6 col-md-4 mb-4'
+          action='/restaurants/{{this._id}}?_method=DELETE' method='POST'>
           <a href='/restaurants/{{this._id}}/detail?simple=true' class='text-secondary'>
             <div class='card mb-3'>
               <img class='card-img-top' src='{{this.image}}' alt='{{this.name}}' />
@@ -72,12 +64,9 @@
       {{/each}}
     </div>
   </div>
-
 {{else}}
-
   <!-- none data message -->
   <div class='container mt-5 text-center'>
     <p>找不到符合搜尋字詞「<span class='text-danger'>{{keyword}}</span>」的餐廳。請嘗試輸入其它關鍵字。</p>
   </div>
-
 {{/if}}
