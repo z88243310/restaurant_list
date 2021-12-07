@@ -1,11 +1,21 @@
 // require packages used in the project
 const express = require('express')
 const exphbs = require('express-handlebars')
+const session = require('express-session')
 const methodOverride = require('method-override')
 const routes = require('./routes')
 
 const app = express()
 const port = 3000
+
+// 使用 session 加密
+app.use(
+  session({
+    secret: 'ThisIsMySecret',
+    resave: false,
+    saveUninitialized: true,
+  })
+)
 
 // get mongodb connection
 require('./config/mongoose')
