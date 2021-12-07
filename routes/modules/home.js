@@ -8,6 +8,7 @@ const errorHandler = require('../../models/errorHandler')
 
 // HomePage with queryString and category
 router.get('/', (req, res) => {
+  const userId = req.user._id
   const keyword = req.query.keyword ? req.query.keyword.toLowerCase().trim() : ''
   const modeSelected = req.query.modeSelected || 'A->Z'
   let modeStatus = ''
@@ -28,7 +29,8 @@ router.get('/', (req, res) => {
       modeStatus = { name: 'asc' }
       break
   }
-  return Restaurant.find({ $or: [{ name: new RegExp(keyword, 'i') }, { category: new RegExp(keyword, 'i') }] })
+  // 在該使用者中，找出姓名及分類符合關鍵字的餐廳
+  return Restaurant.find({ $and: [{ $or: [{ name: new RegExp(keyword, 'i') }, { category: new RegExp(keyword, 'i') }] }, { userId }] })
     .lean()
     .sort(modeStatus)
     .then((restaurants) => res.render('index', { restaurants, keyword, modeSelected }))
