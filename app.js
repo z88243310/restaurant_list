@@ -7,12 +7,17 @@ const flash = require('connect-flash')
 const routes = require('./routes')
 
 const app = express()
-const port = 3000
+
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+
+const PORT = process.env.PORT
 
 // 使用 session 加密
 app.use(
   session({
-    secret: 'ThisIsMySecret',
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
   })
@@ -56,6 +61,6 @@ app.use(routes)
 // routes setting
 
 // start and listen on the Express server
-app.listen(port, () => {
-  console.log(`The server is listening on http://localhost:${port}`)
+app.listen(PORT, () => {
+  console.log(`The server is listening on http://localhost:${PORT}`)
 })
