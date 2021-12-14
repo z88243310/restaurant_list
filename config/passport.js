@@ -9,15 +9,17 @@ module.exports = (app) => {
 
   // 設定本地登入策略
   passport.use(
-    new LocalStrategy({ usernameField: 'email' }, (email, password, done) => {
+    new LocalStrategy({ usernameField: 'email', passReqToCallback: true }, (req, email, password, done) => {
       User.findOne({ email })
         .then((user) => {
           // 使用者不存在
-          if (!user) return done(null, false, { message: 'That email is not registered!' })
-
+          if (!user) {
+            done(null, false, { message: 'That email is not registered!' })
+            return
+          }
           // 密碼錯誤
           if (user.password !== password) {
-            return done(null, false, { message: 'Email or Password incoreect.' })
+            return done(null, false, { message: 'Email or Password incorrect.' })
           }
 
           // 登入成功
