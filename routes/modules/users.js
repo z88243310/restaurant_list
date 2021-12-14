@@ -6,7 +6,7 @@ const bcrypt = require('bcryptjs')
 const User = require('../../models/user')
 
 router.get('/login', (req, res) => {
-  res.render('login', { error: req.flash('error') }) // 設定 error 訊息
+  res.render('login', { error: req.flash('error'), email: req.flash('email') }) // 設定 error 訊息
 })
 
 router.post(
