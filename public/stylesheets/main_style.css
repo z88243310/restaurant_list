@@ -1,11 +1,11 @@
-/* new style */
-/* .btn-create {
-  display: initial;
-  color: #4592af;
-  border: 1px solid #226089;
-  border-radius: 10px;
-  padding: 3px 12px;
+header {
+  overflow: hidden;
 }
-.btn-create:hover {
+
+.navbar .navbar-brand {
+  color: #4592af;
+}
+
+.navbar .navbar-brand:hover {
   color: #226089;
-} */
+}
