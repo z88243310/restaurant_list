@@ -37,8 +37,8 @@
 - [MongoDB 4.2.17](https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2012plus-4.2.17-signed.msi)
 - MongoDB 管理工具 ( [Robo 3T](https://robomongo.org/) )
 - 第三方登入 ( [Facebook developer app](https://developers.facebook.com/apps) )
-- 反向代理 - 外網登入本地 ( [ngrok](https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip) )
 - .env 檔 ( 環境變數設定 )
+- ( 非必要 ) 反向代理 - 外網進入本地 ( [ngrok](https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip) )
 
 ## 安裝與執行步驟
 
@@ -105,7 +105,20 @@ email : user2@example.com
 password : 12345678
 ```
 
-10.( 非必要 ) 使用第三方登入 ( 建立 Facebook developer app，並於 .env 加入環境變數 )
+10.使用第三方登入 ( 建立 Facebook developer app，並於 .env 加入環境變數 )
+
+方法一：本地測試使用
+
+1. 建立 [Facebook developer app](https://developers.facebook.com/apps)後，點選 developer app 左上方，再次建立測試應用程式
+2. 並於 .env 加入環境變數
+
+```text
+FACEBOOK_ID="輸入 facebook test app ID"
+FACEBOOK_SECRET="輸入 facebook test app SECRET"
+FACEBOOK_CALLBACK=http://localhost:3000/auth/facebook/callback
+```
+
+方法二：部屬 heroku，或以外網進入 localhost 測試時使用
 
 1. 建立 [Facebook developer app](https://developers.facebook.com/apps) 取得 ID 和 SECRET
 2. 使用 [ngrok](https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip) 取得 https 本地外網網址
@@ -147,4 +160,4 @@ FACEBOOK_CALLBACK="https 本地外網網址"/auth/facebook/callback
 - passport-facebook 3.0.0
 - passport-local 1.0.0
 
-更新時間 : 2021.12.16
+更新時間 : 2021.01.07
