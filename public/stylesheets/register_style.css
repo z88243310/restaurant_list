@@ -1,0 +1,10 @@
+#register-container {
+  max-width: 400px;
+  min-width: 280px;
+  margin-top: 120px;
+}
+
+#register-container > .card {
+  border-radius: 10px;
+  border: 1px solid rgba(211, 211, 211, 0.329);
+}
