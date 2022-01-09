@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="/stylesheets/show_style.css">
 <h1 class="mb-1 restaurant-show-title">新增餐廳資訊</h1>
-<div class="row mt-5 mx-auto">
+<div class="row mx-auto">
   <form class="col-12 col-md-10 mx-auto" action="/restaurants/create" method="POST">
     <p class="mb-2">
       <span class="text-secondary">
@@ -74,10 +74,10 @@
       <input class="w-100" type="text" name="image" value="" placeholder="Enter the url with image"
         required>
     </p>
-    <div class="w-25 mx-auto mb-5 d-flex justify-content-around">
-      <a class='btn btn-secondary' style='font-size:1.2em;' href='/'>
+    <div class="mx-auto mb-5 d-flex justify-content-around" id="btn-block">
+      <a class="btn btn-secondary" href="/">
         < Back</a>
-          <button type="submit" class="btn btn-primary" style="font-size:1.2em;">Save</button>
+          <button type=" submit" class="btn btn-primary">Save</button>
     </div>
   </form>
 </div>

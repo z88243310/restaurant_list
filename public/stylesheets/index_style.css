@@ -90,9 +90,3 @@
     font-size: 2rem;
   }
 }
-
-@media screen and (max-width: 575px) {
-  .card img {
-    height: auto;
-  }
-}

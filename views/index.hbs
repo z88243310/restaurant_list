@@ -37,7 +37,7 @@
   <div class='container mt-5 px-md-5'>
     <div class='row'>
       {{#each restaurants}}
-        <form id="form-delete" class='col-12 col-sm-6 col-md-4 mb-4'
+        <form id="form-delete" class='col-6 col-sm-6 col-md-4 mb-2'
           action='/restaurants/{{this._id}}?_method=DELETE' method='POST'>
           <a href='/restaurants/{{this._id}}/detail?simple=true' class='text-secondary'>
             <div class='card mb-3'>

@@ -9,3 +9,17 @@ header {
 .navbar .navbar-brand:hover {
   color: #226089;
 }
+
+@media screen and (max-width: 450px) {
+  .navbar-brand {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  nav .btn-create,
+  nav .btn-danger,
+  nav .btn-primary {
+    font-size: 14px;
+    padding: 4px 8px;
+    margin-right: 4px;
+  }
+}
