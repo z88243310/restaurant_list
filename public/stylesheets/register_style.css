@@ -8,3 +8,9 @@
   border-radius: 10px;
   border: 1px solid rgba(211, 211, 211, 0.329);
 }
+
+#must {
+  font-size: 12px;
+  margin: 10px auto;
+  color: grey;
+}
